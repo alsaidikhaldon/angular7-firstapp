@@ -9,6 +9,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { ContentComponent } from './content/content.component';
 import { AgencyComponent } from './agency/agency.component';
 import { CarsComponent } from './cars/cars.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { ContainerComponent } from './container/container.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { CarsComponent } from './cars/cars.component';
     SidebarComponent,
     ContentComponent,
     AgencyComponent,
-    CarsComponent
+    CarsComponent,
+    NavbarComponent,
+    ContainerComponent
   ],
   imports: [
     BrowserModule,
