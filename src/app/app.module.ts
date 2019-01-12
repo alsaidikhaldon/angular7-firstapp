@@ -11,6 +11,9 @@ import { AgencyComponent } from './agency/agency.component';
 import { CarsComponent } from './cars/cars.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ContainerComponent } from './container/container.component';
+import { AgenciesDataService } from './services/agencies-data.service';
+import { HttpClientModule }    from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -23,12 +26,14 @@ import { ContainerComponent } from './container/container.component';
     CarsComponent,
     NavbarComponent,
     ContainerComponent
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [AgenciesDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
