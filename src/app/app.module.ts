@@ -12,29 +12,47 @@ import { CarsComponent } from './cars/cars.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ContainerComponent } from './container/container.component';
 import { AgenciesDataService } from './services/agencies-data.service';
-import { HttpClient, HttpClientModule }    from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { AgenciesComponent } from './agencies/agencies.component';
+import { RouterModule, Routes } from '@angular/router';
 
 
+
+
+const appRoutes: Routes = [
+  {
+    path: '',
+    component: AppComponent,
+    data: { title: 'rental app angular7' }
+  },
+  {
+    path: 'Agencies',
+    component: AgenciesComponent,
+    data: { title: 'rental app angular7' }
+  }
+]
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    SidebarComponent,
-    ContentComponent,
-    AgencyComponent,
-    CarsComponent,
-    NavbarComponent,
-    ContainerComponent
-    
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule
-  ],
-  providers: [AgenciesDataService],
-  bootstrap: [AppComponent]
-})
+    declarations: [
+      AppComponent,
+      HeaderComponent,
+      FooterComponent,
+      SidebarComponent,
+      ContentComponent,
+      AgencyComponent,
+      CarsComponent,
+      NavbarComponent,
+      ContainerComponent,
+      AgenciesComponent
+
+    ],
+    imports: [
+      BrowserModule,
+      AppRoutingModule,
+      HttpClientModule,
+      RouterModule.forRoot(appRoutes)
+    ],
+    providers: [AgenciesDataService],
+    bootstrap: [AppComponent]
+  })
 export class AppModule { }
