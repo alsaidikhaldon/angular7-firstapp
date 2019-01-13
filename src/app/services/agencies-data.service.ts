@@ -1,8 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Agencies } from '../agency/agencies';
 import { HttpClient, HttpRequest, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Observable } from 'rxjs/';
+
+
+
 
 
 
@@ -11,23 +14,21 @@ import { Observable } from 'rxjs/';
 })
 export class AgenciesDataService {
 
- private _url: string= "https://jsonplaceholder.typicode.com/users" ;
+  private _url: string= "http://localhost:3000/agencies" ;
+ // private _url: string= "https://jsonplaceholder.typicode.com/users" ;
 
-  constructor( public http:HttpClient) {
+  constructor(public http:HttpClient) {
 
    }
 
 
-  getAgencies() : Observable<Agencies[]>{ 
-     return this.http.get<Agencies[]>(this._url);
-   
-  }
+  getAgencies() :Observable<[Agencies]> { 
+    return this.http.get<[Agencies]>(this._url);
   
-   
-
+  }
 }
 
-
+// : Observable<[Agencies]>
 // : Agencies[] {
 //   return [
 //     {
@@ -50,3 +51,4 @@ export class AgenciesDataService {
 //     }
 //    ]; 
 // }
+
